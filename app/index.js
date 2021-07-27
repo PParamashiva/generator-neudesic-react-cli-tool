@@ -107,7 +107,7 @@ module.exports = class extends Generator {
 
 
     _writePackageJson() {
-        this.fs.copyTpl(this.templatePath("src-package.json"), this.destinationPath("package1.json"), {
+        this.fs.copyTpl(this.templatePath("src-package.json"), this.destinationPath("package.json"), {
             name: this.answers.name,
             description: this.answers.description,
             projectName: changeCase.paramCase(this.answers.name)
@@ -149,7 +149,7 @@ module.exports = class extends Generator {
                 "bootstrap": "^5.0.2",
             }
         };
-        this.fs.extendJSON(this.destinationPath("package1.json"), cssBootstrapDependencies);
+        this.fs.extendJSON(this.destinationPath("package.json"), cssBootstrapDependencies);
     }
 
     _addReactRouterDomDependencies() {
@@ -158,7 +158,7 @@ module.exports = class extends Generator {
                 "react-router-dom": "^5.2.0",
             }
         };
-        this.fs.extendJSON(this.destinationPath("package1.json"), reactRouterDom);
+        this.fs.extendJSON(this.destinationPath("package.json"), reactRouterDom);
     }
 
     _addReactHookFormDependencies() {
@@ -167,7 +167,7 @@ module.exports = class extends Generator {
                 "react-hook-form": "^7.11.1",
             }
         };
-        this.fs.extendJSON(this.destinationPath("package1.json"), reactHookForm);
+        this.fs.extendJSON(this.destinationPath("package.json"), reactHookForm);
     }
 
     _logCapabilityInfo() {
